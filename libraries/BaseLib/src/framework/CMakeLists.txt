@@ -1,0 +1,101 @@
+set(LOCAL_INCLUDES
+    include/internal_sdl.hpp
+    )
+ADD_CURRENT_LIST_DIR(SRC_FRAMEWORK_INCLUDE ${LOCAL_INCLUDES})
+set(SRC_FRAMEWORK_INCLUDE
+    ${SRC_FRAMEWORK_INCLUDE}
+    include/aex/AABB.hpp
+    include/aex/AbstractFactory.hpp
+    include/aex/AccelEvent.hpp
+    include/aex/ALoopNode.hpp
+    include/aex/BoundingSphere.hpp
+    include/aex/ChronoClock.hpp
+    include/aex/Clock.hpp
+    include/aex/Event.hpp
+    include/aex/EventDispatcher.hpp
+    include/aex/EventHandler.hpp
+    include/aex/Exceptions.hpp
+    include/aex/FingerJoystick.hpp
+    include/aex/fstream.hpp
+    include/aex/GameObject.hpp
+    include/aex/GlobalGameEvents.hpp
+    include/aex/KeyboardEvent.hpp
+    include/aex/LODManager.hpp
+    include/aex/InputDispatchLoopNode.hpp
+    include/aex/Logger.hpp
+    include/aex/MeshExporter.hpp
+    include/aex/MeshImporter.hpp
+    include/aex/MouseEvent.hpp
+    include/aex/MtlMaterial.hpp
+    include/aex/MtlParser.hpp
+    include/aex/MockClock.hpp
+    include/aex/ObjReader.hpp
+    include/aex/SafeIntegralCast.hpp
+    include/aex/Singleton.hpp
+    include/aex/SubsystemGuard.hpp
+    include/aex/TouchEvent.hpp
+    include/aex/TLS.hpp
+    include/aex/utils.hpp
+    include/aex/WindowEvent.hpp
+    include/aex/GLHTimer.hpp
+    include/aex/GestureHandler.hpp
+    include/aex/ThreadedTasks.hpp
+    include/aex/FPSNode.hpp
+    include/aex/utf8.h
+
+    include/aex/audio/AudioPlayer.hpp
+)
+set(_FRAMEWORK
+    src/AABB.cpp
+    src/AbstractFactory.cpp
+    src/AccelEvent.cpp
+    src/ALoopNode.cpp
+    src/BoundingSphere.cpp
+    src/cds_support.cpp
+    src/ChronoClock.cpp
+    src/Common.cpp
+    src/Event.cpp
+    src/EventDispatcher.cpp
+    src/EventHandler.cpp
+    src/EventRelayNode.cpp
+    src/Exceptions.cpp
+    src/FingerJoystick.cpp
+    src/fstream.cpp
+    src/GameObject.cpp
+    src/GlobalGameEvents.cpp
+    src/KeyboardEvent.cpp
+    src/LODManager.cpp
+    src/InputDispatchLoopNode.cpp
+    src/Logger.cpp
+    src/MouseColorPicker.cpp
+    src/MouseEvent.cpp
+    src/MtlMaterial.cpp
+    src/MtlParser.cpp
+    src/MockClock.cpp
+    src/ObjReader.cpp
+    src/ReadWriteSemaphore.cpp
+    src/Singleton.cpp
+    src/ResourceDirector.cpp
+    src/SubsystemGuard.cpp
+    src/TouchEvent.cpp
+    src/TLS.cpp
+    src/Thread.cpp
+    src/ThreadLocalSingleton.cpp
+    src/Timer.cpp
+    src/utils.cpp
+    src/WindowEvent.cpp
+    src/GLHTimer.cpp
+    src/GestureHandler.cpp
+    src/ThreadedTasks.cpp
+    audio/AudioPlayer.cpp
+    CMakeLists.txt
+)
+ADD_CURRENT_LIST_DIR(SRC_FRAMEWORK ${_FRAMEWORK})
+include(${CMAKE_CURRENT_LIST_DIR}/audio/CMakeLists.txt)
+include(${CMAKE_CURRENT_LIST_DIR}/graphics/CMakeLists.txt)
+include(${CMAKE_CURRENT_LIST_DIR}/utils/CMakeLists.txt)
+include(${CMAKE_CURRENT_LIST_DIR}/platform_specific/CMakeLists.txt)
+
+source_group("src\\framework\\include" FILES ${SRC_FRAMEWORK_INCLUDE})
+source_group("src\\framework\\src" FILES ${SRC_FRAMEWORK})
+set_source_files_properties(CMakeLists.txt PROPERTIES HEADER_FILE_ONLY TRUE)

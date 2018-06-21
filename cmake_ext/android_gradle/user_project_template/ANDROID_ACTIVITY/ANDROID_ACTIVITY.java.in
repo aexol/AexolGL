@@ -1,0 +1,18 @@
+package @OPTS_PACKAGE_NAME@;
+
+import com.aexolgl.android.app.@BASE_ACTIVITY_NAME@;
+import android.os.Bundle;
+
+public class @ACTIVITY_NAME@ extends @BASE_ACTIVITY_NAME@
+{
+    /*
+     * Implementation of your activity goes here
+     */
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+        /*
+         * Init your stuff here.
+         */
+    }
+}

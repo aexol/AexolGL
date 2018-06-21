@@ -1,0 +1,16 @@
+buildscript {
+    @OPTS_BUILD_SCRIPT@
+}
+apply plugin: 'com.aexol.android.@target_type@'
+@GRADLE_PLUGINS@
+
+
+repositories {
+    @OPTS_REPOSITORIES@
+}
+
+dependencies {
+    @GRADLE_DEPENDENCIES@
+}
+
+@OPTS_BUILD_GRADLE_EXTRA@

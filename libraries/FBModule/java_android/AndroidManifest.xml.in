@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="@OPTS_PACKAGE_NAME@"
+        android:versionCode="1"
+        android:versionName="1.0"
+        android:installLocation="auto">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <!-- Now width and height from SurfaceView are in pixels - repairs bug with too small viewport created by SDL -->
+    <supports-screens android:anyDensity="true"/>
+
+    <application android:label="@string/app_name"
+            android:icon="@drawable/ic_launcher"
+            android:allowBackup="true"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:hardwareAccelerated="true">
+
+
+          <activity android:name="com.aexolgl.android.fb.FBLoginActivity" />
+          <!-- <meta-data android:name="com.facebook.sdk.AutoLogAppEventsEnabled"
+          android:value="false"/>
+          -->
+
+         <activity android:name="com.facebook.FacebookActivity"
+         android:configChanges=
+                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+         android:label="@string/app_name" />
+
+    </application>
+</manifest>

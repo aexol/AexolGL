@@ -1,0 +1,1 @@
+set_source_files_properties(CMakeLists.txt PROPERTIES HEADER_FILE_ONLY TRUE)
